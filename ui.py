@@ -11,10 +11,14 @@ from PyQt5.QtWidgets import (
     QPlainTextEdit,
     QHBoxLayout,
     QLineEdit,
-    QComboBox
+    QComboBox,
+    QLabel
 )
 
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import (
+    QIcon,
+    QFont
+)
 from PyQt5 import QtCore
 
 
@@ -45,11 +49,14 @@ class View(QWidget):
         hbox_formular.addWidget(self.cb)
         hbox_formular.addWidget(self.le2)
 
+        self.lbl1 = QLabel("v2.3.0", self)
+        self.lbl1.setFont(QFont("Consolas", 10))
         self.btn1 = QPushButton("Calc", self)
         self.btn2 = QPushButton("Clear", self)
 
         hbox = QHBoxLayout()
         hbox.addStretch(1)
+        hbox.addWidget(self.lbl1)
         hbox.addWidget(self.btn1)
         hbox.addWidget(self.btn2)
 
